@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="FMK">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="lib/C:/Users/car/Downloads/apache-log4j-1.2.17/log4j-1.2.17.jar.ear" deploy-path="/" handle="module:/classpath/lib/C:/Users/car/Downloads/apache-log4j-1.2.17/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lib/C:/Users/car/Downloads/apache-log4j-1.2.17/log4j-1.2.17.jar.ear" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/car/Downloads/apache-log4j-1.2.17/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        
+        <dependent-module archiveName="log4j-1.2.17.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/java/Resources/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-1.2.17.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/apache-log4j-1.2.17/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="dom4j-1.6.1.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/ooxml-lib/dom4j-1.6.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="stax-api-1.0.1.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/ooxml-lib/stax-api-1.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-schemas-3.10-FINAL-20140208.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/poi-ooxml-schemas-3.10-FINAL-20140208.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-examples-3.10-FINAL-20140208.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/poi-examples-3.10-FINAL-20140208.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-ooxml-3.10-FINAL-20140208.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/poi-ooxml-3.10-FINAL-20140208.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-excelant-3.10-FINAL-20140208.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/poi-excelant-3.10-FINAL-20140208.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xmlbeans-2.3.0.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/ooxml-lib/xmlbeans-2.3.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-scratchpad-3.10-FINAL-20140208.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/poi-scratchpad-3.10-FINAL-20140208.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-3.10-FINAL-20140208.jar" deploy-path="/lib" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/poi/poi-3.10-FINAL-20140208.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-Core-EJB-Server.jar" deploy-path="/" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/FMK-Core-EJB-Server.jar">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-Core-EJB-Client.jar" deploy-path="/" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/FMK-Core-EJB-Client.jar">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-DynamicWEB.war" deploy-path="/" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/FMK-DynamicWEB.war">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-Core-EJB-Client.jar" deploy-path="/" handle="module:/resource/FMK-Core-EJB-Client/FMK-Core-EJB-Client">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-Core-EJB-Server.jar" deploy-path="/" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/FMK-Core-EJB-Server.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-Core-EJB-Server.jar" deploy-path="/" handle="module:/resource/FMK-Core-EJB-Server/FMK-Core-EJB-Server">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-Utils.jar" deploy-path="/lib" handle="module:/resource/FMK-Utils/FMK-Utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="FMK-DynamicWEB.war" deploy-path="/" handle="module:/resource/FMK-DynamicWEB/FMK-DynamicWEB">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

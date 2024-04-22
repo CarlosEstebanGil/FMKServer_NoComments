@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="FMK-Core-EJB-Server">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/" source-path="/fmk"/>
+        <wb-resource deploy-path="/" source-path="/core_server"/>
+        <wb-resource deploy-path="/" source-path="/configuration"/>
+        <wb-resource deploy-path="/" source-path="/services"/>
+        <property name="java-output-path" value="/FMK-Core-EJB-Server/build/classes"/>
+    </wb-module>
+</project-modules>

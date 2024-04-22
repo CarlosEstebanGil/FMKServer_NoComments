@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="FMK-Core-EJB-Client">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <dependent-module archiveName="FMK-Core-EJB-Server.jar" deploy-path="/" handle="module:/classpath/lib/D:/Sistemas/Patagonia/Resources/FMK-Core-EJB-Server.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/FMK-Core-EJB-Client/build/classes"/>
+        <property name="ClientProject" value="FMK-Core-EJB-ClientClient"/>
+        <property name="ClientJARURI" value="FMK-Core-EJB-ClientClient.jar"/>
+    </wb-module>
+</project-modules>

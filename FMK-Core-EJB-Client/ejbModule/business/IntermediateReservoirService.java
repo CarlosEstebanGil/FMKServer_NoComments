@@ -1,0 +1,131 @@
+package business;
+
+import java.sql.Connection;
+
+import javax.annotation.Resource;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.sql.DataSource;
+
+import fmk_core_server.AbstractMultiSentenceDBServiceConverter;
+
+	@Stateless(name="IntermediateReservoirService", mappedName="IntermediateReservoirService")
+	@LocalBean
+	public class IntermediateReservoirService extends AbstractMultiSentenceDBServiceConverter {
+		@Resource(mappedName="java:jboss/datasources/MyDS") DataSource ds;
+		
+		/**
+	  	 * Obtained Connect
+	  	 * @return conn
+		 * @throws Exception 
+	  	 */
+	    @Override
+	  	public Connection getConnection() throws Exception {
+	  		Connection conn = null;
+	  		try {
+	  			conn = this.ds.getConnection();
+	  		} catch(Exception e) {
+	  			throw new Exception(e.getMessage());
+	  		}
+	  		return conn;
+	  	}
+	    
+	    /**
+	  	 * Execution algorithm
+	  	 * @throws exception
+	  	 */
+	    @Override 
+	  	public void executionAlgorithm() throws Exception {
+	    	try { 
+	    		deleteProration();    		
+			} catch (Exception e) {
+				throw new Exception(e.getMessage());
+			}
+	    } 
+	    
+	    /**
+	  	 * Delete all proration
+	  	 * @throws exception
+	  	 */
+		public void deleteProration() throws Exception {
+		   	try {
+		   		String ids = getIds();
+		   		deleteProrationArticles(ids);
+		   		deleteProrationOperations(ids);
+		   		deleteOperations();
+			} catch (Exception e) {
+				 throw new Exception (e.getMessage()); 
+			}
+		}
+		
+	    /**
+	  	 * Get Ids
+	  	 * @return resultSet
+	  	 * @throws exception
+	  	 */
+		public String getIds() throws Exception{
+			String ids = "";
+			try {
+				final String QRY_SEL_IDS = "QRY_SEL_IDS";
+				String strSQL2 = loadSQLQuery(QRY_SEL_IDS);
+				ps = conn.prepareStatement(strSQL2);
+				fillService(QRY_SEL_IDS);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					ids = ids.concat(",");
+					ids = ids.concat(String.valueOf(rs.getInt("id")));					
+				}
+			} catch (Exception e) {
+				 throw new Exception (e.getMessage()); 
+			}
+			return ids.substring(1, ids.length());
+		}
+		
+		 /**
+	  	 * Delete Operations
+	  	 * @return resultSet
+	  	 * @throws exception
+	  	 */
+		public void deleteOperations() throws Exception{
+			try {
+				final String QRY_DEL_OPERACIONES = "QRY_DEL_OPERACIONES";
+				String strSQL2 = loadSQLQuery(QRY_DEL_OPERACIONES);
+				ps = conn.prepareStatement(strSQL2);
+				fillService(QRY_DEL_OPERACIONES);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				 throw new Exception (e.getMessage()); 
+			}
+		}
+		
+		/**
+	  	 * Delete proration of operations
+	  	 * @throws exception
+	  	 */
+	    public void deleteProrationOperations(String ids) throws Exception {
+			try {
+				String strSQL2 = "DELETE FROM 4pl_factura_gasto_articulo WHERE idfactura_gasto IN (" + ids + ")"; 			
+			   	ps = conn.prepareStatement(strSQL2);  
+			   	ps.executeUpdate(); 	
+			   	
+			} catch (Exception e) {
+				 throw new Exception (e.getMessage()); 
+			}
+	    }	
+	    
+		/**
+	  	 * Delete proration of articles
+	  	 * @throws exception
+	  	 */
+	    public void deleteProrationArticles(String ids) throws Exception {
+			try {			
+				String strSQL2 = "DELETE FROM 4pl_factura_gasto_operacion WHERE idfactura_gasto IN (" + ids + ")"; 			
+			   	ps = conn.prepareStatement(strSQL2);  
+			   	ps.executeUpdate(); 	
+			   	
+			} catch (Exception e) {
+				 throw new Exception (e.getMessage()); 
+			}
+	    }
+
+}

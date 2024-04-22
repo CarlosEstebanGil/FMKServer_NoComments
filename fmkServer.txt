@@ -1,0 +1,247 @@
+Folder PATH listing for volume KINGSTON
+Volume serial number is 00700073 2B8A:5EE7
+F:.
+|   fmkServer.txt
+|   
++---FMK
+|   |   .project
+|   |   
+|   +---.settings
+|   |   |   org.eclipse.ltk.core.refactoring.prefs
+|   |   |   org.eclipse.wst.common.component
+|   |   |   org.eclipse.wst.common.project.facet.core.xml
+|   |   |   
+|   |   \---backupCarlitos
+|   |           org.eclipse.wst.common.component
+|   |           
+|   +---EarContent
+|   |   \---META-INF
+|   |           application.xml
+|   |           jboss-deployment-structure.xml
+|   |           MANIFEST.MF
+|   |           
+|   \---log4jConf
+|           log4j.properties
+|           
++---FMK-Core-EJB-Client
+|   |   .classpath
+|   |   .project
+|   |   
+|   +---.settings
+|   |       org.eclipse.jdt.core.prefs
+|   |       org.eclipse.jst.j2ee.ejb.annotations.xdoclet.prefs
+|   |       org.eclipse.wst.common.component
+|   |       org.eclipse.wst.common.project.facet.core.xml
+|   |       org.jboss.ide.eclipse.as.core.prefs
+|   |       
+|   +---build
+|   |   \---classes
+|   \---ejbModule
+|       +---business
+|       |       AbstractExcelOutput.java
+|       |       AbstractHDFileGenerator.java
+|       |       AutomaticSchedulerBean.java
+|       |       BlobUploader.java
+|       |       Celda.java
+|       |       Celdas.java
+|       |       DeleteProrationService.java
+|       |       DeleteProrationService.java.bak
+|       |       ExcelDashboard.java
+|       |       ExcelKpiMateriaPrimaMaritimayAerea.java
+|       |       ExcelKpiRepuestos.java
+|       |       ExcelKpiSegImpoMateriaPrimaTerrestre.java
+|       |       ExcelKpiSegImpoProdTerminado.java
+|       |       ExcelPruebaNatalia.java
+|       |       FileGen_IMPO_EnvioInfoLineaAzul.java
+|       |       GetDataFromTableForCombo.bak
+|       |       GetDataFromTableForCombo.java
+|       |       HistoricOperaiService.java
+|       |       InProgressHistoricOperaiService.java
+|       |       IntermediateReservoirService.java
+|       |       ModifiedProrationService.java
+|       |       ProrationOperationsService.java
+|       |       ProrationOperationsService.java.bak
+|       |       SvcPruebaXmlOutput.java
+|       |       UploadBlobExample.java
+|       |       
+|       +---Entities
+|       |       Aduanas.java
+|       |       Article.java
+|       |       Article.java.bak
+|       |       Expense.java
+|       |       Invoice.java
+|       |       Operation.java
+|       |       
+|       +---examples
+|       |       AduanasSB.java
+|       |       artici_djai_copiar_faltantes.java
+|       |       GetExcelFileFromQueryADU.java
+|       |       MultiSentenceUseCaseExampleWithTransAndSPjdbc.java
+|       |       stockAvailable.java
+|       |       
+|       +---fmk_core_client
+|       |       DownloadBlobService.java:   Implementa la descarga de archivos blobs. extiende BlobDownloader
+|       |       GenericBLOBDBService.java:  Levanta 2 sentencias y las ejecuta dentro de la misma transaccion
+					    	contemplando campo blob
+|       |       GenericSelectDBService.java: Implementa la ejecucion de un select parametrizado por conf. de servicio 
+						extiende AbstractDBServiceConverter.
+|       |       GenericUpdateDBService.java:  Implementa la ejecucion de un update o insert parametrizado por conf. de servicio 
+						extiende AbstractDBService
+|       |       GenericUpdateXorInsertDBService.java: ejecuta el update def. para el servicio y si falla ejecuta un insert.
+|       |       GetServicesDefinition.java: Implementa en forma personalizada la devolucion del listado de servicios 
+					    configurados en db 
+|       |       ServiceDispatcher.java:	EXTIENDE AbstractServiceDispatcher Y existe para darle caracter de EJB a la misma
+|       |       xmlapi.java: Contiene cídigo incompleto correspondiente a un futuro control / protección del framework.
+|       |       
+|       \---META-INF
+|               ejb-jar.xml
+|               MANIFEST.MF
+|               
++---FMK-Core-EJB-Server
+|   |   .classpath
+|   |   .euml2
+|   |   .project
+|   |   .umlproject
+|   |   
+|   +---.settings
+|   |       org.eclipse.jdt.core.prefs
+|   |       org.eclipse.wst.common.component
+|   |       org.eclipse.wst.common.project.facet.core.xml
+|   |       org.jboss.ide.eclipse.as.core.prefs
+|   |       
+|   +---build
+|   |   \---classes
+|   +---ejbModule
+|   |   +---fmk_core_server
+|   |   |       AbstractDBService.java: Extiende AbstractService e implementa IDBService.  
+						Implementa la ejecución de un servicio standard sql
+|   |   |       AbstractDBServiceConverter.java: extiende AbstractDBService sobreescribe el writeResponse para sobreescribir
+							el resumen basico xml heredado con la ejecucion del converter para una
+							salida mas completa.
+|   |   |       AbstractMultiSentenceDBService.java: Extiende AbstractDBService, redefine el metodo execute para dar lugar
+							a la ejecucion de un código extra invocando un nuevo metodo que el 
+							usuario puede sobreescribir en su clase final y asi ejecutar no solo
+							multiples sentencias (más allá de la forma automática) 
+							sino cualquier código java.
+|   |   |       AbstractMultiSentenceDBServiceConverter.java: Añade el conversor  AbstractMultiSentenceDBService
+|   |   |       AbstractMultiSentenceDBServiceHTTPFileOutput.java: extiende AbstractMultiSentenceDBService y como 
+									importante Redefine el metodo setWriter heredado,para
+									no abrir un writer que no se necesita usar y asi no
+									invalidar el uso del outputStream para la salida deseada			
+			
+|   |   |       AbstractMultiSentenceDBServiceHTTPExcelOutput.java : Redefine el execute y el writeResponse para utilizar
+									un outputStream en lugar del printwriter 
+
+|   |   |       AbstractMultiSentenceDBServiceWithTrans.java: No se está utilizando, la transaccionabilidad se encuentra 
+								manejada en el servlet principal del proyecto dynamicWeb y 
+								mediante configuracion de Jboss. Transacciones manejadas por el	
+								contenedor.
+|   |   |       AbstractService.java:	Una de las Clases base en la jerarquia, representa a cualquier tipo de servicio, está 
+					pensada para derivar por otra rama servicios que no sean especificamente de acceso a 
+					base de datos por ejemplo webServices etc.
+|   |   |       BlobDownloader.java:Es extendida por DownloadBlobService del proyecto ejbClient implementa la ejecucion de 
+					una consulta que trae un blob y en base a este obtiene el outputStream y escribe 
+					el contenido del mismo en la salida.
+|   |   |       BlobUploader_OldIdea.java: No se usa.
+|   |   |       ConcreteSessionBeanServiceWrapper.java
+|   |   |       IDBService.java
+|   |   |       IStandardServiceProvider.java
+|   |   |       Prueba.java
+|   |   |       Pruebas.java
+|   |   |       
+|   |   \---META-INF
+|   |           MANIFEST.MF
+|   |           
+|   \---fmk
+|       \---core_server
+|           \---services
++---FMK-DynamicWEB
+|   |   .classpath
+|   |   .project
+|   |   
+|   +---.settings
+|   |       .jsdtscope
+|   |       org.eclipse.jdt.core.prefs
+|   |       org.eclipse.wst.common.component
+|   |       org.eclipse.wst.common.project.facet.core.xml
+|   |       org.eclipse.wst.jsdt.ui.superType.container
+|   |       org.eclipse.wst.jsdt.ui.superType.name
+|   |       
+|   +---build
+|   |   \---classes
+|   |           crossdomain.xml
+|   |           
+|   +---src
+|   |       crossdomain.xml
+|   |       ServiceLocator.java
+|   |       
+|   \---WebContent
+|       |   services.properties
+|       |   
+|       +---META-INF
+|       |       log4j.properties
+|       |       MANIFEST.MF
+|       |       
+|       \---WEB-INF
+|           |   crossdomain.xml
+|           |   web.xml
+|           |   
+|           +---Backup_SSL
+|           |       web.xml
+|           |       
+|           \---lib
+\---FMK-Utils
+    |   .classpath
+    |   .project
+    |   
+    +---.settings
+    |       org.eclipse.jdt.core.prefs
+    |       org.eclipse.wst.common.component
+    |       org.eclipse.wst.common.project.facet.core.xml
+    |       
+    +---bin
+    \---src
+        +---arrays
+        |       ExtendedHashMap.java: etiende la funcionalidad de un hashmap 
+        |       
+        +---configuration : Clases que Implementan un singleton para cada archivo de configuracion (app, fmk y servicios)
+        |       ISingletonConfiguration.java
+        |       SingletonApplicationConfiguration.java
+        |       SingletonFrameworkConfiguration.java
+        |       SingletonServicesConfiguration.java
+        |       
+        +---exceptions: Clases que extienden la excepciones basicas para separar los conceptos 
+        |       ApplicationException.java
+        |       SystemException.java
+        |       
+        +---file
+        |       HTTPOutputResourceConverter.java: No se utiliza
+        |       
+        +---META-INF
+        |       MANIFEST.MF
+        |       
+        +---output
+        |       IConverter.java
+        |       Service.java: no se utiliza.
+        |       
+        +---serviceDispatcher
+        |       AbstractServiceDispatcher.java: Contiene toda la lógica del service dispatcher, tomando para el servicio
+			recibido como parametro en el request la clase o bean de implementacion que tiene asociado en el
+			arhivo de configuracion de servicios de la aplicacion, mapeandolo el nombre del bean si es necesario
+			( hace esto por un tema de obfuscación por código interpretado dentro de la empresa ) con la finalidad
+			igualmente de lograr el objetivo principal que es la obtención de la clase bean asociada al servicio 
+			mediante jndi y luego la ejecución de la misma a traves del metodo execute ( que toda clase IService
+			implemeneta ).
+        |       IService.java: define metodos que serán de comportamiento común a toda clase que sea un servicio
+        |       IServiceDispatcher.java : define metodos para la implementacion del dispatcher abstracto 8 que no es abstracto
+						sino final pero que termian siendo heredado y marcado como bean para poder ser
+						inyectado en el servlet del proyecto dynamicweb (serviceLocator) que es el que
+						inicia siempre el circuito.
+        |       IStandardExecutableService.java: extiende y especializa iService con el metodo excute que 
+						 implementaran como un standard todos los servicios q sean "ejecutables"
+        |       
+        \---xml
+                IXMLConverter.java: define la interfase de un converter
+                XMLComboDataConverter.java : no se usa.
+                XMLConverter.java: Implementa la conversion de un resultset a XML
+                
